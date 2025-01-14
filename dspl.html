@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Input Value</title>
+</head>
+<body>
+
+    <!-- Input field to enter text -->
+    <input type="text" id="myInput" placeholder="Enter some text">
+
+    <!-- Button to trigger the function -->
+    <button onclick="displayInputValue()">Display Text</button>
+
+    <!-- Paragraph to display the text -->
+    <p id="displayParagraph">The text will appear here.</p>
+
+    <script>
+        // Function to get the value of the input field and display it in the paragraph
+        function displayInputValue() {
+            const inputValue = document.getElementById("myInput").value; // Get the value of the input
+            const displayPara = document.getElementById("displayParagraph"); // Select the paragraph
+            displayPara.textContent = inputValue; // Set the paragraph's text to the input value
+        }
+    </script>
+
+</body>
+</html>

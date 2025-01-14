@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle CSS Class</title>
+    <style>
+        /* Define a CSS class to toggle */
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Element to toggle the class on -->
+    <p id="myText">This is a text element. Click the button to highlight me.</p>
+
+    <!-- Button to toggle the class -->
+    <button onclick="toggleClass()">Toggle Highlight</button>
+
+    <script>
+        // Function to toggle the CSS class on the element
+        function toggleClass() {
+            const element = document.getElementById("myText"); // Select the element by its ID
+            element.classList.toggle("highlight"); // Toggle the "highlight" class
+        }
+    </script>
+
+</body>
+</html>

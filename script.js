@@ -197,3 +197,16 @@ function createParagraph() {
     // Append the new paragraph to the body
     document.body.appendChild(p);
 }
+
+        // Function to change the text content of the specified element
+        function changeTextContent() {
+            const element = document.getElementById("myText"); // Select the element by its ID
+            element.textContent = "This is the new text content."; // Change the text content
+        }
+
+// Function to get the value of the input field and display it in the paragraph
+function displayInputValue() {
+    const inputValue = document.getElementById("myInput").value; // Get the value of the input
+    const displayPara = document.getElementById("displayParagraph"); // Select the paragraph
+    displayPara.textContent = inputValue; // Set the paragraph's text to the input value
+}
