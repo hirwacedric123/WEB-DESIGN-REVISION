@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Individual Assignment #2</title>
+  <style>
+    /* Base styling for a clean look */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f4f7fa;
+      padding: 20px;
+      color: #060035;
+    }
+    h1 {
+      color: #3c4b64;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #2a2f45;
+      font-size: 22px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    h3 {
+      font-size: 18px;
+      color: #2a2f45;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 16px;
+      color: #4f5d73;
+      line-height: 1.5;
+    }
+    /* Styling for buttons */
+    button {
+      padding: 8px 12px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #0e9021;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #10651d;
+    }
+    /* Containers for sections */
+    .section-container {
+      background-color: #91c8cc;
+      width: 80%;
+      align-self: center;
+      margin: 0 auto;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .highlight {
+      background-color: #ffefc1;
+      padding: 5px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+    /* Table Styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    td, th {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #f7f9fc;
+      color: #060035;
+    }
+    /* Styling for form feedback */
+    #formFeedback {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    /* Input field styling */
+    input[type="text"], input[type="email"], input[type="password"] {
+      padding: 8px;
+      font-size: 16px;
+      width: calc(70% - 16px);
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    /* Layout adjustments */
+    .section-container > p {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Individual Assignment #2 for on Interactive Web Development</h1>
+  <h1>KUBWIMANA Thierry     &nbsp; &nbsp;  &nbsp; &nbsp;   &nbsp; &nbsp;    223003944</h1>
+
+  <!-- Array Exercises (Questions 1-20) -->
+  <div class="section-container">
+    <h2>1-10. Array of 20 Numbers Exercises</h2>
+    <p id="arrayAnswers"></p>
+  </div>
+
+  <div class="section-container">
+    <h2>11-20. Array of 20 Names Exercises</h2>
+    <p id="nameArrayAnswers"></p>
+  </div>
+
+  <!-- Object Exercises (Questions 21-30) -->
+  <div class="section-container">
+    <h2>21-30. JavaScript Object Exercises</h2>
+    <p id="objectAnswers"></p>
+  </div>
+
+  <!-- String Exercises (Questions 31-40) -->
+  <div class="section-container">
+    <h2>31-40. String Manipulation Exercises</h2>
+    <p id="stringAnswers"></p>
+  </div>
+
+  <!-- DOM Manipulation Exercises (Questions 41-50) -->
+  <div class="section-container">
+    <h2>41-50. DOM Manipulation and Event Handling Exercises</h2>
+
+    <!-- DOM Manipulation Specific Elements -->
+    <h3>41. Change Background Color</h3>
+    <button onclick="changeBackgroundColor()">Change Background Color</button>
+
+    <h3>42. Hide an HTML Element</h3>
+    <div id="elementToHide">This element will be hidden when the button is clicked.</div>
+    <button onclick="hideElement()">Hide Element</button>
+
+    <h3>43. Add a New Paragraph</h3>
+    <button onclick="addParagraph()">Add Paragraph</button>
+
+    <h3>44. Remove All List Items</h3>
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button onclick="removeAllListItems()">Remove All List Items</button>
+
+    <h3>45. Change Text Content of an Element</h3>
+    <div id="textElement">Original Text</div>
+    <button onclick="changeTextContent()">Change Text</button>
+
+    <h3>46. Toggle CSS Class</h3>
+    <div id="toggleElement" class="highlight">Toggle the highlight class here.</div>
+    <button onclick="toggleClass()">Toggle Class</button>
+
+    <h3>47. Count Div Elements</h3>
+    <p id="divCount"></p>
+    <button onclick="countDivs()">Count Divs</button>
+
+    <h3>48. Get and Display Input Field Value</h3>
+    <input type="text" id="inputField" placeholder="Enter text">
+    <button onclick="displayInputValue()">Display Input Value</button>
+    <p id="inputDisplay"></p>
+
+    <h3>49. Create a 3x3 Table</h3>
+    <button onclick="createTable()">Create Table</button>
+    <div id="tableContainer"></div>
+
+    <h3>50. Form Validation</h3>
+    <form onsubmit="return validateForm()">
+      <label>Name: <input type="text" id="nameField"></label><br>
+      <label>Email: <input type="email" id="emailField"></label><br>
+      <label>Password: <input type="password" id="passwordField"></label><br>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="formFeedback"></p>
+  </div>
+
+  <script>
+    // 1-20: Array of Numbers and Names Exercises
+    const numbers = [11, 21, 30, 40, 50, 60, 70, 80, 91, 105, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200];
+    const names = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Hannah", "Ivy", "Jack", "Kate", "Leo", "Mia", "Nina", "Oscar", "Paul", "Quincy", "Rachel", "Steve", "Tina"];
+    
+    const arrayAnswers = document.getElementById("arrayAnswers");
+    arrayAnswers.innerHTML = `
+      1. Sum of numbers: ${numbers.reduce((sum, num) => sum + num, 0)}<br>
+      2. Largest number: ${Math.max(...numbers)}<br>
+      3. Sorted numbers: ${[...numbers].sort((a, b) => a - b)}<br>
+      4. Reversed numbers: ${[...numbers].reverse()}<br>
+      5. Even numbers: ${numbers.filter(num => num % 2 === 0)}<br>
+      6. Odd numbers: ${numbers.filter(num => num % 2 !== 0)}<br>
+      7. Average: ${(numbers.reduce((a, b) => a + b, 0) / numbers.length).toFixed(2)}<br>
+      8. No duplicates: ${[...new Set(numbers)]}<br>
+      9. Median: ${numbers.sort((a, b) => a - b)[Math.floor(numbers.length / 2)]}<br>
+      10. Numbers * 2: ${numbers.map(num => num * 2)}
+    `;
+
+    // Names array functions (11-20) displayed similarly
+    const nameArrayAnswers = document.getElementById("nameArrayAnswers");
+    nameArrayAnswers.innerHTML = `
+      11. Print names: ${names.join(', ')}<br>
+      12. Sorted names: ${[...names].sort()}<br>
+      13. Check if 'Alice' exists: ${names.includes("Alice")}<br>
+      14. Longest name: ${names.reduce((longest, name) => name.length > longest.length ? name : longest)}<br>
+      15. Names starting with 'A': ${names.filter(name => name.startsWith("A"))}<br>
+      16. Uppercase names: ${names.map(name => name.toUpperCase())}<br>
+      17. Remove 'Charlie': ${names.filter(name => name !== "Charlie")}<br>
+      18. Count names with 'a': ${names.filter(name => name.includes("a")).length}<br>
+      19. Concatenated names: ${names.join(", ")}<br>
+      20. Reversed names: ${[...names].reverse()}
+    `;
+
+    // 21-30: JavaScript Objects
+    const person = { name: "John Doe", age: 30, occupation: "Developer" };
+    const objectAnswers = document.getElementById("objectAnswers");
+    objectAnswers.innerHTML = `
+      21. Person: ${JSON.stringify(person)}<br>
+      22. Person info: ${Object.values(person).join(", ")}<br>
+      23. Add property: ${JSON.stringify({...person, hobby: "Reading"})}<br>
+      24. Remove property: ${(() => { const { age, ...rest } = person; return JSON.stringify(rest); })()}<br>
+      25. Properties and values: ${Object.entries(person).join(", ")}<br>
+      26. Merged: ${JSON.stringify({...person, country: "Rwanda"})}<br>
+      27. Check 'name': ${"name" in person}<br>
+      28. Cloned object: ${JSON.stringify({ ...person })}<br>
+      29. Specific property of array: ${names.map(name => name).join(", ")}<br>
+      30. Update property: ${(() => { person.name = "Jane"; return JSON.stringify(person); })()}
+    `;
+
+    // 31-40: String Manipulation Exercises
+    const exampleString = "JavaScript programming language.";
+    const stringAnswers = document.getElementById("stringAnswers");
+    stringAnswers.innerHTML = `
+      31. Reversed string: ${exampleString.split("").reverse().join("")}<br>
+      32. Vowel count: ${(exampleString.match(/[aeiou]/gi) || []).length}<br>
+      33. Uppercase without .toUpperCase: ${exampleString.replace(/[a-z]/g, c => String.fromCharCode(c.charCodeAt(0) - 32))}<br>
+      34. String length: ${exampleString.split("").reduce(count => count + 1, 0)}<br>
+      35. Replace spaces: ${exampleString.replace(/ /g, "-")}<br>
+      36. First 10 chars: ${exampleString.slice(0, 10)}<br>
+      37. Replace word: ${exampleString.replace("JavaScript", "Python")}<br>
+      38. Words array: ${JSON.stringify(exampleString.split(" "))}<br>
+      39. Is palindrome?: ${exampleString.split("").reverse().join("") === exampleString}<br>
+      40. Count words: ${exampleString.split(" ").length}
+    `;
+
+    // 41-50: DOM Manipulation
+    function changeBackgroundColor() { document.body.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16); }
+    function hideElement() { document.getElementById("elementToHide").style.display = "none"; }
+    function addParagraph() { const p = document.createElement("p"); p.textContent = "New paragraph added!"; document.body.appendChild(p); }
+    function removeAllListItems() { const list = document.getElementById("list"); while (list.firstChild) { list.removeChild(list.firstChild); } }
+    function changeTextContent() { document.getElementById("textElement").textContent = "Text changed!"; }
+    function toggleClass() { document.getElementById("toggleElement").classList.toggle("highlight"); }
+    function countDivs() { document.getElementById("divCount").textContent = `Number of divs: ${document.getElementsByTagName("div").length}`; }
+    function displayInputValue() { document.getElementById("inputDisplay").textContent = `Input Value: ${document.getElementById("inputField").value}`; }
+    function createTable() { const table = document.createElement("table"); for (let i = 0; i < 3; i++) { const row = document.createElement("tr"); for (let j = 0; j < 3; j++) { const cell = document.createElement("td"); cell.textContent = (i * 3) + (j + 1); row.appendChild(cell); } table.appendChild(row); } document.getElementById("tableContainer").innerHTML = ""; document.getElementById("tableContainer").appendChild(table); }
+    function validateForm() { const feedback = document.getElementById("formFeedback"); if (!document.getElementById("nameField").value || !document.getElementById("emailField").value || !document.getElementById("passwordField").value) { feedback.textContent = "All fields are required!"; feedback.style.color = "red"; return false; } feedback.textContent = "Form is valid!"; feedback.style.color = "green"; return true; }
+  </script>
+</body>
+</html>
